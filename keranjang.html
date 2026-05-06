@@ -1,0 +1,39 @@
+<section class="container">
+<h1>Keranjang</h1>
+
+<table border="1">
+<tr>
+<th>Produk</th>
+<th>Harga</th>
+<th>Qty</th>
+<th>Total</th>
+</tr>
+<tbody id="data"></tbody>
+</table>
+
+<h3>Total: Rp <span id="total"></span></h3>
+
+<a href="checkout.html">Checkout</a>
+</section>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let total = 0;
+
+cart.forEach(item=>{
+let sub = item.harga * item.qty;
+
+document.getElementById("data").innerHTML += `
+<tr>
+<td>${item.nama}</td>
+<td>${item.harga}</td>
+<td>${item.qty}</td>
+<td>${sub}</td>
+</tr>
+`;
+
+total += sub;
+});
+
+document.getElementById("total").innerText = total;
+</script>
