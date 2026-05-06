@@ -1,0 +1,19 @@
+<nav>
+<h2>GreenLeaf 🌿</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="produk.html">Produk</a></li>
+<li><a href="keranjang.html">🛒 (<span id="count">0</span>)</a></li>
+</ul>
+</nav>
+
+<section class="container">
+<h1>GreenLeaf Store</h1>
+<p>Toko tanaman hias digital dengan produk berkualitas untuk memperindah rumah Anda.</p>
+</section>
+
+<script>
+let c = JSON.parse(localStorage.getItem("cart")) || [];
+document.getElementById("count").innerText = c.length;
+</script>
