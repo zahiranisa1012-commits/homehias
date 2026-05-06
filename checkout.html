@@ -1,0 +1,26 @@
+<section class="container">
+<h1>Checkout</h1>
+
+<form onsubmit="simpan()">
+<input type="text" id="nama" placeholder="Nama" required><br><br>
+<input type="email" id="email" placeholder="Email" required><br><br>
+
+<p>Admin: 08123456789</p>
+
+<button type="submit">Bayar</button>
+</form>
+</section>
+
+<script>
+function simpan(){
+let user = {
+nama: document.getElementById("nama").value,
+email: document.getElementById("email").value
+};
+
+localStorage.setItem("user", JSON.stringify(user));
+
+window.location.href="hasil.html";
+return false;
+}
+</script>
