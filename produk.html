@@ -1,0 +1,36 @@
+<section class="container">
+<h1>Produk</h1>
+
+<div class="produk">
+<h3>Monstera</h3>
+<p>Rp 80000</p>
+<input type="number" id="qty1" value="1" min="1">
+<button onclick="tambah('Monstera',80000,'qty1')">Tambah</button>
+</div>
+
+<div class="produk">
+<h3>Kaktus Mini</h3>
+<p>Rp 30000</p>
+<input type="number" id="qty2" value="1" min="1">
+<button onclick="tambah('Kaktus Mini',30000,'qty2')">Tambah</button>
+</div>
+
+<a href="keranjang.html">Lihat Keranjang</a>
+</section>
+
+<script>
+function tambah(nama,harga,id){
+let qty = document.getElementById(id).value;
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+cart.push({
+nama:nama,
+harga:harga,
+qty:parseInt(qty)
+});
+
+localStorage.setItem("cart", JSON.stringify(cart));
+alert("Ditambahkan!");
+}
+</script>
